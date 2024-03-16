@@ -21,15 +21,18 @@ NODES=(
     "https://github.com/Ttl/ComfyUi_NNLatentUpscale"
     "https://github.com/huchenlei/ComfyUI-layerdiffusion"
     "https://github.com/cubiq/ComfyUI_essentials"
+    "https://github.com/kijai/ComfyUI-KJNodes.git"
 )
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/cagliostrolab/animagine-xl-3.0/resolve/main/animagine-xl-3.0.safetensors"
-    "https://huggingface.co/Bakanayatsu/Pony-Diffusion-V6-XL-for-Anime/resolve/main/ponyDiffusionForAnime.safetensors"
+    "https://civitai.com/api/download/models/324524"
+    "https://huggingface.co/jiaxiangc/res-adapter/resolve/main/sd1.5/resolution_normalization.safetensors"
 )
 
 LORA_MODELS=(
     "https://civitai.com/api/download/models/142000"
+    "https://huggingface.co/jiaxiangc/res-adapter/resolve/main/sd1.5/resolution_lora.safetensors"
 )
 
 VAE_MODELS=(
@@ -62,6 +65,10 @@ CONTROLNET_MODELS=(
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
 )
 
+ANIMATEDIFF_MODELS=(
+    "https://huggingface.co/guoyww/animatediff/resolve/main/mm_sd_v15.ckpt"
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -86,6 +93,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "/opt/ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved" \
+        "${ANIMATEDIFF_MODELS[@]}"
     provisioning_print_end
 }
 
