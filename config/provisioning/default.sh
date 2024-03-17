@@ -26,7 +26,8 @@ NODES=(
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/cagliostrolab/animagine-xl-3.0/resolve/main/animagine-xl-3.0.safetensors"
-    "https://civitai.com/api/download/models/324524"
+    "https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/VividOrangeMix/VividOrangeMix.safetensors"
+    "https://huggingface.co/LarryAIDraw/autismmixSDXL_autismmixConfetti/resolve/main/autismmixSDXL_autismmixConfetti.safetensors"
     "https://huggingface.co/jiaxiangc/res-adapter/resolve/main/sd1.5/resolution_normalization.safetensors"
 )
 
